@@ -168,7 +168,7 @@ MyApplet.prototype = {
     let configFile = Gio.file_new_for_path(this.configFilePath);
 
     if (!configFile.query_exists(null)) {
-      Util.spawnCommandLineAsync('mkdir ' + this.configFilePath, () => {
+      Util.spawnCommandLineAsync('mkdir -p ' + this.configFilePath, () => {
         this.__init(panel_height);
       });
     } else {
